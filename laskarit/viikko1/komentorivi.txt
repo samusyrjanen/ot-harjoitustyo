@@ -1,3 +1,5 @@
+linkki [README.md](https://github.com/samusyrjanen/ot-harjoitustyo/blob/master/README.md)
+
 kurssit
 └── ot2022
     └── viikko1
