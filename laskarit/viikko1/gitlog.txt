@@ -1,3 +1,7 @@
+linkki [README.md](https://github.com/samusyrjanen/ot-harjoitustyo/blob/master/README.md)
+
+
+
 sysa@lx9-fuxi015:~/code/OHTE/viikko1/tiedostoja$ git log --stat | cat
 commit a06e1e80f049ec072cebd2e96a05299eefa1c0c8
 Author: Samu Syrjänen <samu.syrjanen@gmail.com>
@@ -114,3 +118,6 @@ Date:   Wed Mar 16 14:41:44 2022 +0200
  tiedosto.txt | 0
  1 file changed, 0 insertions(+), 0 deletions(-)
 
+
+
+linkki [README.md](https://github.com/samusyrjanen/ot-harjoitustyo/blob/master/README.md)
