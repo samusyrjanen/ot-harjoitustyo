@@ -1,0 +1,116 @@
+sysa@lx9-fuxi015:~/code/OHTE/viikko1/tiedostoja$ git log --stat | cat
+commit a06e1e80f049ec072cebd2e96a05299eefa1c0c8
+Author: Samu Syrjänen <samu.syrjanen@gmail.com>
+Date:   Wed Mar 16 15:36:41 2022 +0200
+
+    poisto ja uudelleenimeäminen
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 22b9ff0bbd01d3ca8d8e30bc4537734cb5527915
+Author: Samu Syrjänen <samu.syrjanen@gmail.com>
+Date:   Wed Mar 16 15:33:55 2022 +0200
+
+    filet 123
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 2d878f10e5ee15875d3225ba6a5299de9003fc65
+Author: Samu Syrjänen <samu.syrjanen@gmail.com>
+Date:   Wed Mar 16 15:23:10 2022 +0200
+
+    git add -p
+
+ eka.txt    | 5 ++++-
+ kolmas.txt | 2 +-
+ 2 files changed, 5 insertions(+), 2 deletions(-)
+
+commit bcbe460b3bd8256f8f3392767a036bf0c1e61087
+Author: Samu Syrjänen <samu.syrjanen@gmail.com>
+Date:   Wed Mar 16 15:20:49 2022 +0200
+
+    poistettu gitistä tiedosto
+
+ tiedosto.txt | 130 -----------------------------------------------------------
+ 1 file changed, 130 deletions(-)
+
+commit 0f9a091a84ab12a43eaf5f63b5be50d881ed2e34
+Author: Samu Syrjänen <samu.syrjanen@gmail.com>
+Date:   Wed Mar 16 15:20:11 2022 +0200
+
+    eka
+
+ eka.txt    | 130 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ toinen.txt |   1 -
+ 2 files changed, 130 insertions(+), 1 deletion(-)
+
+commit 1436e49293e07176eb1357f875384462da94c378
+Author: Samu Syrjänen <samu.syrjanen@gmail.com>
+Date:   Wed Mar 16 15:15:34 2022 +0200
+
+    poistettu ja lisätty
+
+ tiedosto.txt | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+
+commit 59ad5b8477b38921534ee5d9379e1f8024413143
+Author: Samu Syrjänen <samu.syrjanen@gmail.com>
+Date:   Wed Mar 16 15:14:16 2022 +0200
+
+    paljon tekstiä
+
+ tiedosto.txt | 128 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 127 insertions(+), 1 deletion(-)
+
+commit af2d4512d3f8a8ae2dc7e68c68827e9e3aa2f70b
+Author: Samu Syrjänen <samu.syrjanen@gmail.com>
+Date:   Wed Mar 16 14:50:29 2022 +0200
+
+    stuff lisätty
+
+ stuff/abc.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 4e54b7d0652a1124a52dbefbac7fe1db42cddb4e
+Author: Samu Syrjänen <samu.syrjanen@gmail.com>
+Date:   Wed Mar 16 14:49:06 2022 +0200
+
+    muokkaukset toinen ja kolmas
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 47c01b3badcf31b05e62ed06f1bdd43f4a70f50c
+Author: Samu Syrjänen <samu.syrjanen@gmail.com>
+Date:   Wed Mar 16 14:47:50 2022 +0200
+
+    kolmas lisätty
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit ca180d3bb01ad401781e7eabc2a2b66ec7962b22
+Author: Samu Syrjänen <samu.syrjanen@gmail.com>
+Date:   Wed Mar 16 14:45:03 2022 +0200
+
+    muutis ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 68e53ca9cc148fb7aecc9e9a3a7218f0b805272d
+Author: Samu Syrjänen <samu.syrjanen@gmail.com>
+Date:   Wed Mar 16 14:41:44 2022 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
