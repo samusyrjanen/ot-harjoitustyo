@@ -1,0 +1,9 @@
+laskarit/viikko2/unicafe/src/__pycache__/
+laskarit/viikko2/unicafe/src/tests/__pycache__/
+.coverage
+htmlcov/
+laskarit/viikko2/unicafe/.cache/
+laskarit/viikko2/unicafe/coveragerc
+laskarit/viikko2/unicafe/src/tests/__init__.pyc
+laskarit/viikko2/poetry.lock
+laskarit/viikko2/pyproject.toml
