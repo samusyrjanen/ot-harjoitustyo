@@ -7,3 +7,5 @@ laskarit/viikko2/unicafe/coveragerc
 laskarit/viikko2/unicafe/src/tests/__init__.pyc
 laskarit/viikko2/poetry.lock
 laskarit/viikko2/pyproject.toml
+laskarit/viikko2/sovellus/venv/
+laskarit/viikko2/sovellus/__pycache__/
