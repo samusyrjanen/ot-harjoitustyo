@@ -5,9 +5,19 @@
       Pelaaja "1" --|> "1" Pelinappula
       Pelilauta "1" --|> "40" Ruutu
       Ruutu "1" <-- "1" Pelinappula
-      class Noppa{}
-      class Pelaaja{}
-      class Pelilauta{}
-      class Ruutu{}
-      class Pelinappula{}
+      class Noppa{
+
+      }
+      class Pelaaja{
+
+      }
+      class Pelilauta{
+
+      }
+      class Ruutu{
+
+      }
+      class Pelinappula{
+          
+      }
 ```
