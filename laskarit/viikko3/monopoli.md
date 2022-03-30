@@ -1,13 +1,13 @@
 ```mermaid
- classDiagram
-      Todo "*" --> "1" User
-      class User{
-          username
-          password
-      }
-      class Todo{
-          id
-          content
-          done
-      }
+classdiagram
+    Noppa '2' <-- '1' Pelaaja
+    Noppa '2' --> '1' Pelinappula
+    Pelaaja '1' --|> '1' Pelinappula
+    Pelilauta '1' --|> '40' Ruutu
+    Ruutu '1' <-- '1' Pelinappula
+    class Noppa{}
+    class Pelaaja{}
+    class Pelilauta{}
+    class Ruutu{}
+    class Pelinappula{}
 ```
