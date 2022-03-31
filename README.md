@@ -12,6 +12,14 @@ Sovellus on testattu python-versiolla 3.8
 [työaikakirjanpito](https://github.com/samusyrjanen/ot-harjoitustyo/tree/master/dokumentaatio/tyoaikakirjanpito.md)
 [changelog](https://github.com/samusyrjanen/ot-harjoitustyo/tree/master/dokumentaatio/changelog.md)
 
+## Asennus
+
+Asenna riippuvuudet:  
+`poetry install`  
+
+Sovelluksen käynnistys:  
+`poetry run invoke start`
+
 ## komentorivitoiminnot
 
 ### Ohjelman suorittaminen:
