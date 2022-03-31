@@ -10,12 +10,13 @@ sequenceDiagram
     Engine->>+FuelTank: consume(5)
     FuelTank-->>-Engine: 
     Engine-->>-Machine: 
-    Machine->+Engine: is_running()
-    Engine->-Machine: True
+    Machine->>+Engine: is_running()
+    Engine->>-Machine: True
     alt is_running()
         Machine->>+Engine: use_energy()
         Engine->>+FuelTank: consume(10)
         FuelTank-->>-Engine: 
         Engine-->>-Machine: 
     end
+    Machine-->>-Main: 
 ```
