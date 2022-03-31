@@ -7,7 +7,7 @@ komennot = {
     '3': '3 poista kaikki tiedot'
 }
 
-class Budjetointi:
+class Kayttoliittyma:
     def __init__(self):
         self._palvelu = File_reader()
 
@@ -49,5 +49,5 @@ class Budjetointi:
     def _poista_kaikki_tiedot(self):
         self._palvelu.clear()
 
-sovellus = Budjetointi()
+sovellus = Kayttoliittyma()
 sovellus.kaynnista()
