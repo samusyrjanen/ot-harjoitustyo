@@ -9,3 +9,6 @@ laskarit/viikko2/poetry.lock
 laskarit/viikko2/pyproject.toml
 laskarit/viikko2/sovellus/venv/
 laskarit/viikko2/sovellus/__pycache__/
+harjoitustyo/.pytest_cache/
+harjoitustyo/src/__pycache__/
+harjoitustyo/src/tests/__pycache__/
