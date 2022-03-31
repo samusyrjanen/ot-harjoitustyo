@@ -9,7 +9,7 @@ Sovellus on testattu python-versiolla 3.8
 ## Dokumentaatio
 
 [vaatimusmäärittely](https://github.com/samusyrjanen/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)  
-[työaikakirjanpito](https://github.com/samusyrjanen/ot-harjoitustyo/tree/master/dokumentaatio/tyoaikakirjanpito.md)
+[työaikakirjanpito](https://github.com/samusyrjanen/ot-harjoitustyo/tree/master/dokumentaatio/tyoaikakirjanpito.md)  
 [changelog](https://github.com/samusyrjanen/ot-harjoitustyo/tree/master/dokumentaatio/changelog.md)
 
 ## Asennus
@@ -22,14 +22,11 @@ Sovelluksen käynnistys:
 
 ## komentorivitoiminnot
 
-### Ohjelman suorittaminen:
-
+Ohjelman suorittaminen:  
 `poetry run invoke start`
 
-### Testaus:
-
+Testaus:  
 `poetry run invoke test`
 
-### Testikattavuus:
-
+Testikattavuus:  
 `poetry run invoke coverage-report`
