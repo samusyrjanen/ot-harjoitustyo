@@ -22,10 +22,16 @@ class File_reader():
 
         return earnings
 
-    def add(self, sum, name):
+    def lisaa_tulo(self, sum: int, name):
         with open(self.tulot_data_file_path, 'a') as file:
             file.write(f'{sum};{name}\n')
 
+    def lisaa_meno(self, sum: int, name):
+        with open(self.menot_data_file_path, 'a') as file:
+            file.write(f'{-sum};{name}\n')
+
     def clear(self):
         with open(self.tulot_data_file_path, 'w'):
+            pass
+        with open(self.menot_data_file_path, 'w'):
             pass

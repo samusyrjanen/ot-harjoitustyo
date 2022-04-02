@@ -3,8 +3,9 @@ from file_reader import File_reader
 komennot = {
     'x': 'x lopeta',
     '1': '1 lisaa tulo',
-    '2': '2 tulosta arvio',
-    '3': '3 poista kaikki tiedot'
+    '2': '2 lisaa meno',
+    '3': '3 tulosta arvio',
+    '4': '4 poista kaikki tiedot'
 }
 
 class Kayttoliittyma:
@@ -31,20 +32,29 @@ class Kayttoliittyma:
             elif komento == '1':
                 self._lisaa_tulo()
             elif komento == '2':
-                self._tulosta_arvio()
+                self._lisaa_meno()
             elif komento == '3':
+                self._tulosta_arvio()
+            elif komento == '4':
                 self._poista_kaikki_tiedot()
 
     def _lisaa_tulo(self):
         nimi = input('Anna nimi tulolle: ')
         maara = input('Tulon määrä euroina: ')
 
-        self._palvelu.add(maara, nimi)
+        self._palvelu.lisaa_tulo(maara, nimi)
+
+    def _lisaa_meno(self):
+        nimi = input('Anna nimi maksulle: ')
+        maara = input('Maksujen määrä euroina: ')
+
+        self._palvelu.lisaa_meno(int(maara), nimi)
 
     def _tulosta_arvio(self):
         tulot = self._palvelu.read()
 
-        print(sum(tulot))
+        print(f'Tuloarviosi kuukaudessa: {sum(tulot)}')
+        print(f'Tuloarviosi vuodessa: {12*sum(tulot)}')
 
     def _poista_kaikki_tiedot(self):
         self._palvelu.clear()
