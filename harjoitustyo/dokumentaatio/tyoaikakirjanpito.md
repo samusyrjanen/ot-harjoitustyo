@@ -7,7 +7,8 @@ määrittelydokumentti:
 
 Alustava alkeellinen toiminnallisuus sovellukseen, testien aloittaminen, testikattavuusraportti, invoke tehtävät, changelog:  
 5.3 h
+0.5 h
 
 ## lista työtunneista
 
-[0.5, 5.3]
+[0.5, 5.3, 0.5]
