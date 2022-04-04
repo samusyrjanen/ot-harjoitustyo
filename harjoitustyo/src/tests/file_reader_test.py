@@ -9,9 +9,9 @@ class TestFile_reader(unittest.TestCase):
     def test_read(self):
         self.assertEqual(self.file_reader.read(), [])
 
-    def test_add(self):
-        self.file_reader.add(10, 'test1')
-        self.file_reader.add(20, 'test2')
+    def test_lisaa_tulo(self):
+        self.file_reader.lisaa_tulo(10, 'test1')
+        self.file_reader.lisaa_tulo(20, 'test2')
         self.assertEqual(self.file_reader.read(), [10, 20])
 
     def test_clear(self):
