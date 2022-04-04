@@ -1,4 +1,4 @@
-[README.md](https://github.com/samusyrjanen/ot-harjoitustyo/blob/master/README.md)  
+[README.md](../../README.md)
 
 # sovelluksen tarkoitus
 
