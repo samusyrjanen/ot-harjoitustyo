@@ -14,8 +14,8 @@ komennot = {
 }
 
 class Kayttoliittyma:
-    def __init__(self):
-        self._palvelu = Repository(get_database_connection())
+    def __init__(self, palvelu):
+        self._palvelu = palvelu
 
     def ohje(self):
         for komento in komennot.values():
@@ -95,5 +95,6 @@ class Kayttoliittyma:
 
         self._palvelu.delete_expense(nimi)
 
-sovellus = Kayttoliittyma()
+palvelu = Repository(get_database_connection())
+sovellus = Kayttoliittyma(palvelu)
 sovellus.kaynnista()
