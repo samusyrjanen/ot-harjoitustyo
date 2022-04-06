@@ -21,3 +21,5 @@ SQLiten käyttöönotto:
 3 h  
 datan listaus ja yksittäisten tietojen poisto:  
 0.5 h  
+testikattavuus:  
+1.2 h  
