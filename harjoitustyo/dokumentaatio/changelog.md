@@ -11,3 +11,4 @@
 ## viikko 4
 
 - SQLiten käyttöönotto
+- datan listaus ja yksittäisten tietojen poisto

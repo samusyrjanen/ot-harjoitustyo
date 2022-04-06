@@ -16,9 +16,9 @@ Sovellukseen ei tarvitse eri oikeuksilla toimivia käyttäjiä.
   - käyttäjätunnus täytyy olla uniikki
   - kirjautuminen tapahtuu kirjautumislomakkeella
   - jos kirjautuminen epäonnistuu, siitä ilmoitetaan käyttäjälle
-- (done) käyttäjä näkee oman suunnitelmansa ja kuukausittaisen ja vuosittaisen suunnitellun varallisuutensa
+- (tehty) käyttäjä näkee oman suunnitelmansa ja kuukausittaisen ja vuosittaisen suunnitellun varallisuutensa
 - käyttäjä voi merkitä tämänhetkisen varallisuutensa
-- käyttäjä voi lisätä ja poistaa menoja tai tuloja, jolloin varallisuusennuste muuttuu
+- (tehty) käyttäjä voi lisätä ja poistaa menoja tai tuloja, jolloin varallisuusennuste muuttuu
 - käyttäjä voi kirjautua ulos
 
 ## jatkokehitysideoita
