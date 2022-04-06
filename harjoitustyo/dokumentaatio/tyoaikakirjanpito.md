@@ -1,6 +1,10 @@
 [README.md](../../README.md)
 
-# työajat tunteina
+## lista työtunneista
+
+[0.5, 5.3, 0.5, 3]
+
+### viikko 2
 
 määrittelydokumentti:  
 0.5 h
@@ -11,6 +15,7 @@ Alustava alkeellinen toiminnallisuus sovellukseen, testien aloittaminen, testika
 5.3 h
 0.5 h
 
-## lista työtunneista
+### viikko 4:
 
-[0.5, 5.3, 0.5]
+SQLiten käyttöönotto:
+3 h

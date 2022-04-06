@@ -7,3 +7,7 @@
 - aloitettu testien tekeminen
 - testikattavuusraportti saatavilla
 - invoke-tehtävät start, test ja coverage-report
+
+## viikko 4
+
+- SQLiten käyttöönotto
