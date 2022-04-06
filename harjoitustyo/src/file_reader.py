@@ -30,7 +30,7 @@ class Repository:
         cursor.execute(sql, {'amount':amount, 'name':name})
         self._connection.commit()
 
-    def clear(self):#not working for some reason
+    def clear(self):
         cursor = self._connection.cursor()
         sql1 = 'delete from expenses'
         sql2 = 'delete from income'
