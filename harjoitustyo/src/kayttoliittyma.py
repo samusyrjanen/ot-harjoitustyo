@@ -3,6 +3,7 @@ from database_connection import get_database_connection
 
 komennot = {
     'x': 'x lopeta',
+    '0': '0 ohje',
     '1': '1 lisaa tulo',
     '2': '2 lisaa meno',
     '3': '3 tulosta arvio',
@@ -33,6 +34,8 @@ class Kayttoliittyma:
 
             if komento == 'x':
                 break
+            elif komento == '0':
+                self.ohje()
             elif komento == '1':
                 self._lisaa_tulo()
             elif komento == '2':

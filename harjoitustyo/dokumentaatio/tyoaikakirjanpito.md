@@ -12,12 +12,12 @@ määrittelydokumentti:
 ### Viikko 3:
 
 Alustava alkeellinen toiminnallisuus sovellukseen, testien aloittaminen, testikattavuusraportti, invoke tehtävät, changelog:  
-5.3 h
+5.3 h  
 0.5 h
 
 ### viikko 4:
 
-SQLiten käyttöönotto:
-3 h
-datan listaus ja yksittäisten tietojen poisto:
-0.5 h
+SQLiten käyttöönotto:  
+3 h  
+datan listaus ja yksittäisten tietojen poisto:  
+0.5 h  
