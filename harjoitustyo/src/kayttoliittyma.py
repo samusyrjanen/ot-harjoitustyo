@@ -1,4 +1,5 @@
-from file_reader import File_reader
+from file_reader import Repository
+from database_connection import get_database_connection
 
 komennot = {
     'x': 'x lopeta',
@@ -10,7 +11,7 @@ komennot = {
 
 class Kayttoliittyma:
     def __init__(self):
-        self._palvelu = File_reader()
+        self._palvelu = Repository(get_database_connection())
 
     def ohje(self):
         for komento in komennot.values():
@@ -40,21 +41,22 @@ class Kayttoliittyma:
 
     def _lisaa_tulo(self):
         nimi = input('Anna nimi tulolle: ')
-        maara = input('Tulon määrä euroina: ')
+        maara = int(input('Tulon määrä euroina: '))
 
-        self._palvelu.lisaa_tulo(maara, nimi)
+        self._palvelu.add_income(maara, nimi)
 
     def _lisaa_meno(self):
         nimi = input('Anna nimi maksulle: ')
-        maara = input('Maksujen määrä euroina: ')
+        maara = int(input('Maksujen määrä euroina: '))
 
-        self._palvelu.lisaa_meno(int(maara), nimi)
+        self._palvelu.add_expense(-maara, nimi)
 
     def _tulosta_arvio(self):
-        tulot = self._palvelu.read()
+        tulot = self._palvelu.read_income()
+        menot = self._palvelu.read_expenses()
 
-        print(f'Tuloarviosi kuukaudessa: {sum(tulot)}')
-        print(f'Tuloarviosi vuodessa: {12*sum(tulot)}')
+        print(f'Tuloarviosi kuukaudessa: {sum(tulot+menot)}')
+        print(f'Tuloarviosi vuodessa: {12*sum(tulot+menot)}')
 
     def _poista_kaikki_tiedot(self):
         self._palvelu.clear()
