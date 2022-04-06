@@ -34,21 +34,21 @@ class Kayttoliittyma:
 
             if komento == 'x':
                 break
-            elif komento == '0':
+            if komento == '0':
                 self.ohje()
-            elif komento == '1':
+            if komento == '1':
                 self._lisaa_tulo()
-            elif komento == '2':
+            if komento == '2':
                 self._lisaa_meno()
-            elif komento == '3':
+            if komento == '3':
                 self._tulosta_arvio()
-            elif komento == '4':
+            if komento == '4':
                 self._tulosta_tiedot()
-            elif komento == '5':
+            if komento == '5':
                 self._poista_tulo()
-            elif komento == '6':
+            if komento == '6':
                 self._poista_meno()
-            elif komento == '7':
+            if komento == '7':
                 self._poista_kaikki_tiedot()
 
     def _lisaa_tulo(self):
@@ -95,6 +95,6 @@ class Kayttoliittyma:
 
         self._palvelu.delete_expense(nimi)
 
-palvelu = Repository(get_database_connection())
-sovellus = Kayttoliittyma(palvelu)
+repository = Repository(get_database_connection())
+sovellus = Kayttoliittyma(repository)
 sovellus.kaynnista()
