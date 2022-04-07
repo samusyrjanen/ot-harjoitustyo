@@ -18,6 +18,9 @@ Sovellus on testattu python-versiolla 3.8
 Asenna riippuvuudet:  
 `poetry install`  
 
+Tietokannan alustus:  
+`poetry run invoke initialize-database`
+
 Sovelluksen käynnistys:  
 `poetry run invoke start`
 
@@ -30,4 +33,7 @@ Testaus:
 `poetry run invoke test`
 
 Testikattavuus:  
-`poetry run invoke coverage-report`
+`poetry run invoke coverage-report`  
+
+Pylint:
+`poetry run invoke lint`
