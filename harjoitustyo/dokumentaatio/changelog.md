@@ -12,3 +12,5 @@
 
 - SQLiten käyttöönotto  
 - datan listaus ja yksittäisten tietojen poisto  
+- pylint  
+- arkkitehtuuri.md  

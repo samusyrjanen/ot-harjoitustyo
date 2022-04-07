@@ -13,7 +13,7 @@ komennot = {
     '7': '7 poista kaikki tiedot'
 }
 
-class Kayttoliittyma:
+class Kayttoliittyma:#miten tätä kannattais jakaa osiin?
     def __init__(self, palvelu):
         self._palvelu = palvelu
 

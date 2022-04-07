@@ -10,7 +10,8 @@ Sovellus on testattu python-versiolla 3.8
 
 [vaatimusmäärittely](./harjoitustyo/dokumentaatio/vaatimusmaarittely.md)  
 [työaikakirjanpito](./harjoitustyo/dokumentaatio/tyoaikakirjanpito.md)  
-[changelog](./harjoitustyo/dokumentaatio/changelog.md)
+[changelog](./harjoitustyo/dokumentaatio/changelog.md)  
+[arkkitehtuuri](./harjoitustyo/dokumentaatio/arkkitehtuuri.md)  
 
 ## Asennus
 

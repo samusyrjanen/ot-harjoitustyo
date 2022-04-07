@@ -2,7 +2,7 @@
 
 ## lista työtunneista
 
-[0.5, 5.3, 0.5, 3, 0.5]
+[0.5, 5.3, 0.5, 3, 0.5, 1.5, 0.5]
 
 ### viikko 2
 
@@ -23,3 +23,7 @@ datan listaus ja yksittäisten tietojen poisto:
 0.5 h  
 testikattavuus:  
 1.2 h  
+pylint ja muuta:
+1.5 h  
+arkkitehtuuri.md:  
+0.5 h  
