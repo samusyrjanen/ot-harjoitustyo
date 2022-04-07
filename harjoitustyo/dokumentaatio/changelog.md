@@ -12,5 +12,6 @@
 
 - SQLiten käyttöönotto  
 - datan listaus ja yksittäisten tietojen poisto  
+- tämänhetkisen varallisuuden lisääminen  
 - pylint  
 - arkkitehtuuri.md  

@@ -23,6 +23,10 @@ class TestRepository(unittest.TestCase):
         self.file_reader.add_income(20, 'test4')
         self.assertEqual(self.file_reader.read_income(), [10, 20])
 
+    def test_add_wealth(self):
+        self.file_reader.add_wealth(2000)
+        self.assertEqual(self.file_reader.read_wealth(), 2000)
+
     def test_get_data_expenses(self):
         self.file_reader.add_expense(-10, 'test1')
         self.file_reader.add_expense(-20, 'test2')
@@ -48,6 +52,8 @@ class TestRepository(unittest.TestCase):
     def test_clear(self):
         self.file_reader.add_expense(-10, 'test1')
         self.file_reader.add_income(10, 'test3')
+        self.file_reader.add_wealth(2000)
         self.file_reader.clear()
         self.assertEqual(self.file_reader.read_expenses(), [])
         self.assertEqual(self.file_reader.read_income(), [])
+        self.assertEqual(self.file_reader.read_wealth(), 0)

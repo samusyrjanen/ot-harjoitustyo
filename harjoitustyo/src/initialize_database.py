@@ -9,6 +9,9 @@ def drop_tables(connection):
     cursor.execute('''
         drop table if exists income;
     ''')
+    cursor.execute('''
+        drop table if exists wealth;
+    ''')
 
     connection.commit()
 
@@ -27,6 +30,12 @@ def create_tables(connection):
             id integer primary key,
             amount integer,
             name text
+        );
+    ''')
+    cursor.execute('''
+        create table wealth (
+            id integer primary key,
+            amount integer
         );
     ''')
 

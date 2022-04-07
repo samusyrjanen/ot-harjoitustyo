@@ -2,9 +2,9 @@
 
 ## lista työtunneista
 
-[0.5, 5.3, 0.5, 3, 0.5, 1.5, 0.5]  
+[0.5, 5.3, 0.5, 3, 0.5, 1.5, 0.5, 1]  
 
-yhteensä 11.8 h
+yhteensä 12.8 h
 
 ### viikko 2
 
@@ -29,3 +29,5 @@ pylint ja muuta:
 1.5 h  
 arkkitehtuuri.md:  
 0.5 h  
+varallisuuden lisäys ja testit:  
+1 h  

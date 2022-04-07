@@ -10,7 +10,8 @@ komennot = {
     '4': '4 tulosta kaikki menot ja tulot',
     '5': '5 poista tulo',
     '6': '6 poista meno',
-    '7': '7 poista kaikki tiedot'
+    '7': '7 lisaa tämänhetkinen varallisuus',
+    '8': '8 poista kaikki tiedot'
 }
 
 class Kayttoliittyma:#miten tätä kannattais jakaa osiin?
@@ -20,12 +21,14 @@ class Kayttoliittyma:#miten tätä kannattais jakaa osiin?
     def ohje(self):
         for komento in komennot.values():
             print(komento)
+        print()
 
     def kaynnista(self):
         self.ohje()
 
         while True:
             komento = input('anna komento: ')
+            print()
 
             if komento not in komennot:
                 print('virheellinen komento')
@@ -49,29 +52,40 @@ class Kayttoliittyma:#miten tätä kannattais jakaa osiin?
             if komento == '6':
                 self._poista_meno()
             if komento == '7':
+                self._lisaa_varallisuus()
+            if komento == '8':
                 self._poista_kaikki_tiedot()
 
     def _lisaa_tulo(self):
         nimi = input('Anna nimi tulolle: ')
         maara = int(input('Tulon määrä euroina: '))
+        print()
 
         self._palvelu.add_income(maara, nimi)
 
     def _lisaa_meno(self):
         nimi = input('Anna nimi maksulle: ')
         maara = int(input('Maksujen määrä euroina: '))
+        print()
 
         self._palvelu.add_expense(-maara, nimi)
 
     def _tulosta_arvio(self):
         tulot = self._palvelu.read_income()
         menot = self._palvelu.read_expenses()
+        varallisuus = self._palvelu.read_wealth()
 
-        print(f'Tuloarviosi kuukaudessa: {sum(tulot+menot)}')
-        print(f'Tuloarviosi vuodessa: {12*sum(tulot+menot)}')
+        print(f'''Tuloarviosi kuukaudessa: {sum(tulot+menot)}
+Tuloarviosi vuodessa: {12*sum(tulot+menot)}
+
+Varallisuutesi kuukauden päästä: {sum(tulot+menot) + varallisuus}
+Varallisuutesi vuoden päästä: {12*sum(tulot+menot) + varallisuus}
+        ''')
 
     def _poista_kaikki_tiedot(self):
         self._palvelu.clear()
+        print('Tiedot poistettu')
+        print()
 
     def _tulosta_tiedot(self):
         menot = self._palvelu.get_data_expenses()
@@ -80,20 +94,30 @@ class Kayttoliittyma:#miten tätä kannattais jakaa osiin?
         print('Tulot:')
         for tulo in tulot:
             print(tulo[0], tulo[1])
+        print()
 
         print('Menot:')
         for meno in menot:
             print(meno[0], meno[1])
+        print()
 
     def _poista_tulo(self):
         nimi = input('Anna poistettavan tulon nimi: ')
+        print()
 
         self._palvelu.delete_income(nimi)
 
     def _poista_meno(self):
         nimi = input('Anna poistettavan menon nimi: ')
+        print()
 
         self._palvelu.delete_expense(nimi)
+
+    def _lisaa_varallisuus(self):
+        varallisuus = int(input('Anna tämänhetkinen varallisuus: '))
+        print()
+
+        self._palvelu.add_wealth(varallisuus)
 
 repository = Repository(get_database_connection())
 sovellus = Kayttoliittyma(repository)

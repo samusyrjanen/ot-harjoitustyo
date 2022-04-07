@@ -35,5 +35,5 @@ Testaus:
 Testikattavuus:  
 `poetry run invoke coverage-report`  
 
-Pylint:
+Pylint:  
 `poetry run invoke lint`
