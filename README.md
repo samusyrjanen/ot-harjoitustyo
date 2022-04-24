@@ -16,6 +16,7 @@ Sovellus on testattu python-versiolla 3.8
 ## Asennus
 
 Asenna riippuvuudet:  
+Siirry hakemistoon harjoitustyo/  
 `poetry install`  
 
 Tietokannan alustus:  
