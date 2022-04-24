@@ -14,7 +14,7 @@ komennot = {
     '8': '8 poista kaikki tiedot'
 }
 
-class Kayttoliittyma:#miten tätä kannattais jakaa osiin?
+class Kayttoliittyma:
     def __init__(self, palvelu):
         self._palvelu = palvelu
 
