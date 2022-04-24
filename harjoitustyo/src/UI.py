@@ -1,7 +1,7 @@
 from file_reader import Repository
 from database_connection import get_database_connection
 
-komennot = {
+commands = {
     'x': 'x lopeta',
     '0': '0 ohje',
     '1': '1 lisaa tulo',
@@ -14,111 +14,111 @@ komennot = {
     '8': '8 poista kaikki tiedot'
 }
 
-class Kayttoliittyma:
-    def __init__(self, palvelu):
-        self._palvelu = palvelu
+class UI:
+    def __init__(self, service):
+        self._service = service
 
-    def ohje(self):
-        for komento in komennot.values():
-            print(komento)
+    def help(self):
+        for command in commands.values():
+            print(command)
         print()
 
-    def kaynnista(self):
-        self.ohje()
+    def start(self):
+        self.help()
 
         while True:
-            komento = input('anna komento: ')
+            command = input('anna komento: ')
             print()
 
-            if komento not in komennot:
+            if command not in commands:
                 print('virheellinen komento')
-                self.ohje()
+                self.help()
                 continue
 
-            if komento == 'x':
+            if command == 'x':
                 break
-            if komento == '0':
-                self.ohje()
-            if komento == '1':
-                self._lisaa_tulo()
-            if komento == '2':
-                self._lisaa_meno()
-            if komento == '3':
-                self._tulosta_arvio()
-            if komento == '4':
-                self._tulosta_tiedot()
-            if komento == '5':
-                self._poista_tulo()
-            if komento == '6':
-                self._poista_meno()
-            if komento == '7':
-                self._lisaa_varallisuus()
-            if komento == '8':
-                self._poista_kaikki_tiedot()
+            if command == '0':
+                self.help()
+            if command == '1':
+                self._add_income()
+            if command == '2':
+                self._add_expense()
+            if command == '3':
+                self._print_estimation()
+            if command == '4':
+                self._print_data()
+            if command == '5':
+                self._delete_income()
+            if command == '6':
+                self._delete_expense()
+            if command == '7':
+                self._update_wealth()
+            if command == '8':
+                self._delete_all_data()
 
-    def _lisaa_tulo(self):
-        nimi = input('Anna nimi tulolle: ')
-        maara = int(input('Tulon määrä euroina: '))
+    def _add_income(self):
+        name = input('Anna nimi tulolle: ')
+        amount = int(input('Tulon määrä euroina: '))
         print()
 
-        self._palvelu.add_income(maara, nimi)
+        self._service.add_income(amount, name)
 
-    def _lisaa_meno(self):
-        nimi = input('Anna nimi maksulle: ')
-        maara = int(input('Maksujen määrä euroina: '))
+    def _add_expense(self):
+        name = input('Anna nimi maksulle: ')
+        amount = int(input('Maksujen määrä euroina: '))
         print()
 
-        self._palvelu.add_expense(-maara, nimi)
+        self._service.add_expense(-amount, name)
 
-    def _tulosta_arvio(self):
-        tulot = self._palvelu.read_income()
-        menot = self._palvelu.read_expenses()
-        varallisuus = self._palvelu.read_wealth()
+    def _print_estimation(self):
+        income = self._service.read_income()
+        expenses = self._service.read_expenses()
+        wealth = self._service.read_wealth()
 
-        print(f'''Tuloarviosi kuukaudessa: {sum(tulot+menot)}
-Tuloarviosi vuodessa: {12*sum(tulot+menot)}
+        print(f'''Tuloarviosi kuukaudessa: {sum(income+expenses)}
+Tuloarviosi vuodessa: {12*sum(income+expenses)}
 
-Varallisuutesi kuukauden päästä: {sum(tulot+menot) + varallisuus}
-Varallisuutesi vuoden päästä: {12*sum(tulot+menot) + varallisuus}
+Varallisuutesi kuukauden päästä: {sum(income+expenses) + wealth}
+Varallisuutesi vuoden päästä: {12*sum(income+expenses) + wealth}
         ''')
 
-    def _poista_kaikki_tiedot(self):
-        self._palvelu.clear()
+    def _delete_all_data(self):
+        self._service.clear()
         print('Tiedot poistettu')
         print()
 
-    def _tulosta_tiedot(self):
-        menot = self._palvelu.get_data_expenses()
-        tulot = self._palvelu.get_data_income()
+    def _print_data(self):
+        expenses = self._service.get_data_expenses()
+        income_list = self._service.get_data_income()
 
         print('Tulot:')
-        for tulo in tulot:
-            print(tulo[0], tulo[1])
+        for income in income_list:
+            print(income[0], income[1])
         print()
 
         print('Menot:')
-        for meno in menot:
-            print(meno[0], meno[1])
+        for expense in expenses:
+            print(expense[0], expense[1])
         print()
 
-    def _poista_tulo(self):
-        nimi = input('Anna poistettavan tulon nimi: ')
+    def _delete_income(self):
+        name = input('Anna poistettavan tulon nimi: ')
         print()
 
-        self._palvelu.delete_income(nimi)
+        self._service.delete_income(name)
 
-    def _poista_meno(self):
-        nimi = input('Anna poistettavan menon nimi: ')
+    def _delete_expense(self):
+        name = input('Anna poistettavan menon nimi: ')
         print()
 
-        self._palvelu.delete_expense(nimi)
+        self._service.delete_expense(name)
 
-    def _lisaa_varallisuus(self):
-        varallisuus = int(input('Anna tämänhetkinen varallisuus: '))
+    def _update_wealth(self):
+        wealth = int(input('Anna tämänhetkinen varallisuus: '))
         print()
 
-        self._palvelu.add_wealth(varallisuus)
+        self._service.add_wealth(wealth)
 
 repository = Repository(get_database_connection())
-sovellus = Kayttoliittyma(repository)
-sovellus.kaynnista()
+sovellus = UI(repository)
+sovellus.start()
