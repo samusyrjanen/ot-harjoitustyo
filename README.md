@@ -16,7 +16,7 @@ Sovellus on testattu python-versiolla 3.8
 ## Asennus
 
 Asenna riippuvuudet:  
-Siirry hakemistoon harjoitustyo/  
+Siirry ensin hakemistoon harjoitustyo/  
 `poetry install`  
 
 Tietokannan alustus:  
@@ -31,9 +31,11 @@ Ohjelman suorittaminen:
 `poetry run invoke start`
 
 Testaus:  
+(testien suorittaminen poistaa olemassa olevat tiedot sovelluksesta)  
 `poetry run invoke test`
 
 Testikattavuus:  
+(testien suorittaminen poistaa olemassa olevat tiedot sovelluksesta)  
 `poetry run invoke coverage-report`  
 
 Pylint:  

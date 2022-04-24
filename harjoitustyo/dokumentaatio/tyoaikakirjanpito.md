@@ -2,9 +2,9 @@
 
 ## lista työtunneista
 
-[0.5, 5.3, 0.5, 3, 0.5, 1.5, 0.5, 1]  
+[0.5, 5.3, 0.5, 3, 0.5, 1.5, 0.5, 1, 1,5]  
 
-yhteensä 12.8 h
+yhteensä 14.3 h
 
 ### viikko 2
 
@@ -31,3 +31,8 @@ arkkitehtuuri.md:
 0.5 h  
 varallisuuden lisäys ja testit:  
 1 h  
+
+### viikko 5:
+
+koodin kääntäminen suomesta englanniksi:  
+1.5 h  
