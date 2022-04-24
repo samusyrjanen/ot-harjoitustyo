@@ -2,9 +2,9 @@
 
 ## lista työtunneista
 
-[0.5, 5.3, 0.5, 3, 0.5, 1.5, 0.5, 1, 1,5]  
+[0.5, 5.3, 0.5, 3, 0.5, 1.5, 0.5, 1, 1,5, 7.5]  
 
-yhteensä 14.3 h
+yhteensä 21.8 h
 
 ### viikko 2
 
@@ -36,3 +36,5 @@ varallisuuden lisäys ja testit:
 
 koodin kääntäminen suomesta englanniksi:  
 1.5 h  
+tkinterin käyttöönotto:  
+7.5 h  
