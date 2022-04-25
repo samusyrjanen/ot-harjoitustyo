@@ -1,4 +1,3 @@
-from asyncio import base_subprocess
 from tkinter import Tk, ttk, constants
 from service import service
 
