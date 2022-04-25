@@ -1,10 +1,10 @@
-from tkinter import Tk, ttk, constants
-from service import service
+from tkinter import ttk, constants
 
 class DataView:
-    def __init__(self, root):
+    def __init__(self, root, service):
         self._root = root
         self._frame = None
+        self._service = service
 
         self._initialize()
 
@@ -17,8 +17,8 @@ class DataView:
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
 
-        estimation = service._get_estimation()
-        data = service._print_data()
+        estimation = self._service.get_estimation()
+        data = self._service.print_data()
 
         heading_label = ttk.Label(master=self._frame, text="Varallisuusarvio")
         estimation_label = ttk.Label(master=self._frame, text=estimation)
@@ -29,11 +29,12 @@ class DataView:
         data_label.grid(row=2, column=0, sticky=constants.W)
 
 class FrontView:
-    def __init__(self, root):
+    def __init__(self, root, service):
         self._root = root
         self._frame = None
         self._data_frame = None
         self._data_view = None
+        self._service = service
 
         self._initialize()
 
@@ -47,7 +48,7 @@ class FrontView:
         if self._data_view:
             self._data_view.destroy()
 
-        self._data_view = DataView(self._data_frame)
+        self._data_view = DataView(self._data_frame, self._service)
 
         self._data_view.pack()
 
@@ -102,7 +103,7 @@ class FrontView:
         )
 
         self._data_frame.grid(row=0, column=0)
-    
+
         name1_label.grid(row=3, column=0, sticky=constants.E)
         amount1_label.grid(row=4, column=0, sticky=constants.E)
 
@@ -129,45 +130,44 @@ class FrontView:
 
         delete_all_data_button.grid(row=9, column=2)
 
-
     def _handle_add_income(self):
         add_income_name = self._add_income_name_entry.get()
         add_income_amount = int(self._add_income_amount_entry.get())
-        
-        service._add_income(add_income_name, add_income_amount)
+
+        self._service.add_income(add_income_name, add_income_amount)
 
         self._initialize_data()
 
     def _handle_add_expense(self):
         add_expense_name = self._add_expense_name_entry.get()
         add_expense_amount = int(self._add_expense_amount_entry.get())
-        
-        service._add_expense(add_expense_name, add_expense_amount)
+
+        self._service.add_expense(add_expense_name, add_expense_amount)
 
         self._initialize_data()
 
     def _handle_delete_income(self):
         delete_income_name = self._delete_income_name_entry.get()
 
-        service._delete_income(delete_income_name)
+        self._service.delete_income(delete_income_name)
 
         self._initialize_data()
 
     def _handle_delete_expense(self):
         delete_expense_name = self._delete_expense_name_entry.get()
 
-        service._delete_expense(delete_expense_name)
+        self._service.delete_expense(delete_expense_name)
 
         self._initialize_data()
 
     def _handle_update_wealth(self):
         wealth = int(self._update_wealth_entry.get())
 
-        service._update_wealth(wealth)
+        self._service.update_wealth(wealth)
 
         self._initialize_data()
 
     def _handle_delete_all_data(self):
-        service._delete_all_data()
+        self._service.delete_all_data()
 
         self._initialize_data()

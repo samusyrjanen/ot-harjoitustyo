@@ -15,3 +15,8 @@
 - tämänhetkisen varallisuuden lisääminen  
 - pylint  
 - arkkitehtuuri.md  
+
+## viikko 5
+
+- tkinterin käyttöönotto
+- tiedostojen rakenteen muokkaus

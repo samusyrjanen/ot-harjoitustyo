@@ -12,3 +12,4 @@ laskarit/viikko2/sovellus/__pycache__/
 harjoitustyo/.pytest_cache/
 harjoitustyo/src/__pycache__/
 harjoitustyo/src/tests/__pycache__/
+harjoitustyo/src/ui/__pycache__/

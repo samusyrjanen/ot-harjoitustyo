@@ -2,9 +2,9 @@
 
 ## lista työtunneista
 
-[0.5, 5.3, 0.5, 3, 0.5, 1.5, 0.5, 1, 1,5, 7.5, 1]  
+[0.5, 5.3, 0.5, 3, 0.5, 1.5, 0.5, 1, 1,5, 7.5, 1, 2, 0.6]  
 
-yhteensä 22.8 h
+yhteensä 25.4 h
 
 ### viikko 2
 
@@ -39,3 +39,7 @@ koodin kääntäminen suomesta englanniksi:
 tkinterin käyttöönotto:  
 7.5 h  
 1 h  
+tiedostojen sijainnin muokkausta, testit ja pylint:  
+2 h  
+sekvenssikaavio:  
+0.6 h  
