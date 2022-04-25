@@ -6,6 +6,10 @@ Sovelluksen tarkoitus on auttaa rahankulutuksen ja säästämisen arvioinnissa. 
 
 Sovellus on testattu python-versiolla 3.8
 
+## release
+
+[https://github.com/samusyrjanen/ot-harjoitustyo/releases/tag/viikko5](https://github.com/samusyrjanen/ot-harjoitustyo/releases/tag/viikko5)
+
 ## Dokumentaatio
 
 [vaatimusmäärittely](./harjoitustyo/dokumentaatio/vaatimusmaarittely.md)  
