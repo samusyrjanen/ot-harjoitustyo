@@ -1,8 +1,4 @@
-from tkinter import Tk
 from front_view import FrontView
-from service import Service
-from file_reader import Repository
-from database_connection import get_database_connection
 
 class UI:
     def __init__(self, root, servic):
@@ -24,14 +20,3 @@ class UI:
         self._current_view = FrontView(self._root, self._service)
 
         self._current_view.pack()
-
-repository = Repository(get_database_connection())
-service = Service(repository)
-
-window = Tk()
-window.title("Budjetointisovellus")
-
-ui = UI(window, service)
-ui.start()
-
-window.mainloop()

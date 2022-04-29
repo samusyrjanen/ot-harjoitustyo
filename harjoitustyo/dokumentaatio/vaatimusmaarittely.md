@@ -2,8 +2,7 @@
 
 # sovelluksen tarkoitus
 
-Käyttäjä voi lisätä merkintöjä menoistaan ja tuloistaan ja pitää kirjaa varoistaan. Sovelluksella 
-voi suunnitella rahankulutustaan ja vertailla kehitystä pitkällä aikavälillä. laajennusmahdollisuuksia 
+Käyttäjä voi lisätä merkintöjä menoistaan ja tuloistaan ja pitää kirjaa varoistaan. Sovelluksella voi suunnitella rahankulutusta ja vertailla kehitystä pitkällä aikavälillä. laajennusmahdollisuuksia 
 esimerkiksi säästämisen ja sijoittamisen suunnitteluun.
 
 # käyttäjät
