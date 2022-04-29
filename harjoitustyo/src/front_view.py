@@ -29,12 +29,13 @@ class DataView:
         data_label.grid(row=2, column=0, sticky=constants.W)
 
 class FrontView:
-    def __init__(self, root, service):
+    def __init__(self, root, service, show_login_view):
         self._root = root
         self._frame = None
         self._data_frame = None
         self._data_view = None
         self._service = service
+        self._show_login_view = show_login_view
 
         self._initialize()
 
@@ -71,6 +72,11 @@ class FrontView:
         self._delete_expense_name_entry = ttk.Entry(master=self._frame)
         self._update_wealth_entry = ttk.Entry(master=self._frame)
 
+        logout_button = ttk.Button(
+            master=self._frame,
+            text="kirjaudu ulos",
+            command=self._handle_logout
+        )
         add_income_button = ttk.Button(
             master=self._frame,
             text="lisää tulo",
@@ -102,6 +108,8 @@ class FrontView:
             command=self._handle_delete_all_data
         )
 
+        logout_button.grid(row=0, column=2)
+        
         self._data_frame.grid(row=0, column=0)
 
         name1_label.grid(row=3, column=0, sticky=constants.E)
@@ -171,3 +179,7 @@ class FrontView:
         self._service.delete_all_data()
 
         self._initialize_data()
+
+    def _handle_logout(self):
+        self._service.logout()
+        self._show_login_view()

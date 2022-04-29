@@ -11,14 +11,14 @@ Sovellukseen ei tarvitse eri oikeuksilla toimivia käyttäjiä.
 
 # toiminnallisuudet
 
-- käyttäjä voi tehdä tunnuksen ja kirjautua sisään
-  - käyttäjätunnus täytyy olla uniikki
-  - kirjautuminen tapahtuu kirjautumislomakkeella
+- (tehty) käyttäjä voi tehdä tunnuksen ja kirjautua sisään
+  - (tehty) käyttäjätunnus täytyy olla uniikki
+  - (tehty) kirjautuminen tapahtuu kirjautumislomakkeella
   - jos kirjautuminen epäonnistuu, siitä ilmoitetaan käyttäjälle
 - (tehty) käyttäjä näkee oman suunnitelmansa ja kuukausittaisen ja vuosittaisen suunnitellun varallisuutensa
 - (tehty) käyttäjä voi merkitä tämänhetkisen varallisuutensa
 - (tehty) käyttäjä voi lisätä ja poistaa menoja tai tuloja, jolloin varallisuusennuste muuttuu
-- käyttäjä voi kirjautua ulos
+- (tehty) käyttäjä voi kirjautua ulos
 
 ## jatkokehitysideoita
 

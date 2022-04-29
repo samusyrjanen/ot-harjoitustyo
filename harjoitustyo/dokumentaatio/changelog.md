@@ -20,3 +20,7 @@
 
 - tkinterin käyttöönotto
 - tiedostojen rakenteen muokkaus
+
+## viikko 6
+
+- käyttäjät voivat kirjautua sisään ja data tallentuu käyttäjäkohtaisesti  

@@ -2,9 +2,9 @@
 
 ## lista työtunneista
 
-[0.5, 5.3, 0.5, 3, 0.5, 1.5, 0.5, 1, 1,5, 7.5, 1, 2, 0.6]  
+[0.5, 5.3, 0.5, 3, 0.5, 1.5, 0.5, 1, 1,5, 7.5, 1, 2, 0.6, 2.8]  
 
-yhteensä 25.4 h
+yhteensä 28.2 h  
 
 ### viikko 2
 
@@ -43,3 +43,8 @@ tiedostojen sijainnin muokkausta, testit ja pylint:
 2 h  
 sekvenssikaavio:  
 0.6 h  
+
+### viikko 6:
+
+kirjautuminen:  
+2.8 h  
