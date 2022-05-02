@@ -8,6 +8,6 @@ class TestInitialize_database(unittest.TestCase):
         self.file_reader = Repository(get_database_connection())
 
     def test_initialize_database(self):
-        self.file_reader.add_expense(100, 'test')
+        self.file_reader.add_expense(100, 'test', 0)
         initialize_database()
-        self.assertEqual(self.file_reader.get_data_expenses(), [])
+        self.assertEqual(self.file_reader.get_data_expenses(0), [])

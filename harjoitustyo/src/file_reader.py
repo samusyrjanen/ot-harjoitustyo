@@ -100,11 +100,16 @@ class Repository:
             right_password = result.fetchone()[0]
         except:
             return False
-        if password == right_password:
-            return True
+        return password == right_password
 
     def user_id(self, username):
         cursor = self._connection.cursor()
         sql = 'select id from users where username=:username'
         result = cursor.execute(sql, {'username':username})
         return result.fetchone()[0]
+
+    def delete_user(self, username):
+        cursor = self._connection.cursor()
+        sql = 'delete from users where username=:username'
+        cursor.execute(sql, {'username':username})
+        self._connection.commit()
