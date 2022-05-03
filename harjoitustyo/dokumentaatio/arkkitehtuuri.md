@@ -1,13 +1,21 @@
-sovellus:
+## rakenne
+
 ```mermaid
  classDiagram
-      Service "1" --> "1" Repository
+      index --> UI
+      Service "1" <--> "1" File_reader
       Initialize_database ..> "1" Database_connection
-      Repository "1" ..> "1" Database_connection
+      File_reader "1" <..> "1" Database_connection
       UI "1" --> "1" FrontView
-      FrontView "1" --> "1" Service
+      UI "1" --> "1" LoginView
+      LoginView "1" --> "1" Service
+      FrontView "1" <..> "1" LoginView
+      FrontView "1" <--> "1" Service
 ```
 
+## sovelluslogiikka
+
+Suuri osa sovelluksen toiminnoista noudattaa seuraavaa kaavaa.  
 tietojen poistaminen repositoriosta: 
 
 ```mermaid
@@ -29,3 +37,7 @@ sequenceDiagram
     DataView-->>-FrontView: 
     FrontView->>-FrontView: 
 ```
+
+## tallennus
+
+Data tallennetaan SQLite-tietokantaan (harjoitustyo/src/repositories/data.db). Tietokantaa lukee ja kirjoittaa File_reader.py tiedostossa oleva Repository -luokka. Tietokannan schema on tallennettu schema.sql tiedostoon. Tietokannassa on taulut income, expenses, wealth ja users.
