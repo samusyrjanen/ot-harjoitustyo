@@ -5,7 +5,7 @@ class Repository:
     Attributes:
         conection: Yhteys repositorioon.
     '''
-    
+
     def __init__(self, connection):
         '''
         Konstruktori, joka tallentaa argumentin muuttujaan.
@@ -13,7 +13,7 @@ class Repository:
         Args:
             connection: Yhteys repositorioon.
         '''
-        
+
         self._connection = connection
 
     def read_expenses(self, user_id):
@@ -26,7 +26,7 @@ class Repository:
         Returns:
             Lista käyttäjän menoista.
         '''
-        
+
         cursor = self._connection.cursor()
         sql = 'select amount from expenses where user_id=:user_id'
         cursor.execute(sql, {'user_id':user_id})
@@ -43,7 +43,7 @@ class Repository:
         Returns:
             Lista käyttäjän tuloista.
         '''
-        
+
         cursor = self._connection.cursor()
         sql = 'select amount from income where user_id=:user_id'
         cursor.execute(sql, {'user_id':user_id})
@@ -60,7 +60,7 @@ class Repository:
         Returns:
             Käyttäjän varallisuus.
         '''
-        
+
         cursor = self._connection.cursor()
         sql = 'select amount from wealth where user_id=:user_id order by id desc'
         cursor.execute(sql, {'user_id':user_id})
@@ -78,7 +78,7 @@ class Repository:
             name: Menon nimi.
             user_id: Käyttäjän id.
         '''
-        
+
         cursor = self._connection.cursor()
         sql = 'insert into expenses (amount, name, user_id) values ' \
             '(:amount, :name, :user_id)'
@@ -94,7 +94,7 @@ class Repository:
             name: Tulon nimi.
             user_id: Käyttäjän id.
         '''
-        
+
         cursor = self._connection.cursor()
         sql = 'insert into income (amount, name, user_id) values ' \
             '(:amount, :name, :user_id)'
@@ -108,7 +108,7 @@ class Repository:
         Args:
             user_id: Käyttäjän id.
         '''
-        
+
         cursor = self._connection.cursor()
         sql1 = 'delete from expenses where user_id=:user_id'
         sql2 = 'delete from income where user_id=:user_id'
@@ -128,7 +128,7 @@ class Repository:
         Returns:
             Lista Käyttäjän menoista ja menojen nimistä.
         '''
-        
+
         cursor = self._connection.cursor()
         sql = 'select amount, name from expenses where user_id=:user_id'
         cursor.execute(sql, {'user_id':user_id})
@@ -160,7 +160,7 @@ class Repository:
             name: Tulon nimi.
             user_id: Käyttäjän id.
         '''
-        
+
         cursor = self._connection.cursor()
         sql = 'delete from income where name=:name and user_id=:user_id'
         cursor.execute(sql, {'name':name, 'user_id':user_id})
@@ -174,7 +174,7 @@ class Repository:
             name: Menon nimi.
             user_id: Käyttäjän id.
         '''
-        
+
         cursor = self._connection.cursor()
         sql = 'delete from expenses where name=:name and user_id=:user_id'
         cursor.execute(sql, {'name':name, 'user_id':user_id})
@@ -188,7 +188,7 @@ class Repository:
             wealth: Varallisuus
             user_id: Käyttäjän id.
         '''
-        
+
         cursor = self._connection.cursor()
         sql = 'insert into wealth (amount, user_id) values (:wealth, :user_id)'
         cursor.execute(sql, {'wealth':wealth, 'user_id':user_id})
@@ -205,7 +205,7 @@ class Repository:
         Returns:
             True jos rekisteröityminen ja kirjautuminen onnistuu, muutoin False.
         '''
-        
+
         cursor = self._connection.cursor()
         try:
             sql = 'insert into users (username, password) ' \
@@ -227,13 +227,13 @@ class Repository:
         Returns:
             True jos kirjautuminen onnistuu, muutoin False.
         '''
-        
+
         cursor = self._connection.cursor()
         sql = 'select password from users where username=:username'
         result = cursor.execute(sql, {'username':username})
         try:
             right_password = result.fetchone()[0]
-        except:
+        except TypeError:
             return False
         return password == right_password
 
@@ -243,11 +243,11 @@ class Repository:
 
         args:
             username: Käyttäjätunnus
-            
+
         returns:
             id
         '''
-        
+
         cursor = self._connection.cursor()
         sql = 'select id from users where username=:username'
         result = cursor.execute(sql, {'username':username})
@@ -260,7 +260,7 @@ class Repository:
         Args:
             username: Käyttäjänimi.
         '''
-        
+
         cursor = self._connection.cursor()
         sql = 'delete from users where username=:username'
         cursor.execute(sql, {'username':username})

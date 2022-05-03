@@ -9,15 +9,15 @@ def main():
     '''
     Käynnistää sovelluksen luomalla ikkunan ja kutsumalla UI:ta.
     '''
-    
+
     repository = Repository(get_database_connection())
     service = Service(repository)
 
     window = Tk()
     window.title("Budjetointisovellus")
 
-    ui = UI(window, service)
-    ui.start()
+    user_interface = UI(window, service)
+    user_interface.start()
 
     window.mainloop()
 

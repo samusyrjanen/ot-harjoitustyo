@@ -9,7 +9,7 @@ class LoginView:
         service: Sovelluslogiikasta huolehtiva luokka.
         show_front_view: Metodi, joka näyttää seuraavan näymän.
     '''
-    
+
     def __init__(self, root, service, show_front_view):
         '''
         Konstruktori, joka luo muuttujat ja käynnistää näkymän luonnin.
@@ -19,7 +19,7 @@ class LoginView:
             service: Sovelluslogiikasta huolehtiva luokka.
             show_front_view: Metodi, joka näyttää seuraavan näymän.
         '''
-        
+
         self._root = root
         self._frame = None
         self._service = service
@@ -31,14 +31,14 @@ class LoginView:
         '''
         Viimeistelee näkymän luonnin.
         '''
-        
+
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
         '''
         Poistaa tämänhetkisen näkymän.
         '''
-        
+
         self._frame.destroy()
 
     def _initialize(self):
@@ -85,3 +85,4 @@ class LoginView:
 
         if self._service.register(username, password):
             self._show_front_view()
+            

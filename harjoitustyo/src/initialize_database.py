@@ -7,7 +7,7 @@ def drop_tables(connection):
     Args:
         connection: Yhteys tietokantaan.
     '''
-    
+
     cursor = connection.cursor()
 
     cursor.execute('''
@@ -32,7 +32,7 @@ def create_tables(connection):
     Args:
         connection: Yhteys tietokantaan.
     '''
-    
+
     cursor = connection.cursor()
 
     cursor.execute('''
@@ -72,7 +72,7 @@ def initialize_database():
     '''
     Alustaa tietokannan luomalla uudet tyhjät taulut.
     '''
-    
+
     connection = get_database_connection()
 
     drop_tables(connection)

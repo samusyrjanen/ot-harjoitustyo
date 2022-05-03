@@ -9,7 +9,7 @@ class UI:
         root: Avautuva ikkuna eli UI:n kehys.
         servic: Sovelluslogiikasta huolehtiva luokka.
     '''
-    
+
     def __init__(self, root, servic):
         '''
         Luokan konstruktori. Luo muuttujat UI:n käytettäväksi.
@@ -18,7 +18,7 @@ class UI:
             root: Avautuva ikkuna eli UI:n kehys.
             servic: Sovelluslogiikasta huolehtiva luokka.
         '''
-        
+
         self._root = root
         self._current_view = None
         self._service = servic
@@ -27,7 +27,7 @@ class UI:
         '''
         Näyttää kirjautumisnäkymän sovelluksen käynnistyessä.
         '''
-        
+
         self._show_login_view()
 
     def _hide_current_view(self):
@@ -48,3 +48,4 @@ class UI:
         self._current_view = LoginView(self._root, self._service, self._show_front_view)
 
         self._current_view.pack()
+        

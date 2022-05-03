@@ -8,7 +8,7 @@ class DataView:
         root: Sovelluksen ikkuna.
         service: Sovelluslogiikasta huolehtiva luokka.
     '''
-    
+
     def __init__(self, root, service):
         '''
         Konstruktori, joka luo muuttujat ja käynnistää näkymän luonnin.
@@ -17,7 +17,7 @@ class DataView:
             root: Sovelluksen ikkuna.
             service: Sovelluslogiikasta huolehtiva luokka.
         '''
-        
+
         self._root = root
         self._frame = None
         self._service = service
@@ -28,14 +28,14 @@ class DataView:
         '''
         Viimeistelee näkymän luonnin.
         '''
-        
+
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
         '''
         Poistaa tämänhetkisen näkymän.
         '''
-        
+
         self._frame.destroy()
 
     def _initialize(self):
@@ -61,7 +61,7 @@ class FrontView:
         service: Sovelluslogiikasta huolehtiva luokka.
         show_login_view: Metodi, joka näyttää kirjautumisnäymän.
     '''
-    
+
     def __init__(self, root, service, show_login_view):
         '''
         Konstruktori, joka luo muuttujat ja käynnistää näkymän luonnin.
@@ -71,7 +71,7 @@ class FrontView:
             service: Sovelluslogiikasta huolehtiva luokka.
             show_login_view: Metodi, joka näyttää kirjautumisnäymän.
         '''
-        
+
         self._root = root
         self._frame = None
         self._data_frame = None
@@ -85,14 +85,14 @@ class FrontView:
         '''
         viimeistelee näkymän luonnin.
         '''
-        
+
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
         '''
         Poistaa tämänhetkisen näkymän.
         '''
-        
+
         self._frame.destroy()
 
     def _initialize_data(self):
@@ -159,7 +159,7 @@ class FrontView:
         )
 
         logout_button.grid(row=0, column=2)
-        
+
         self._data_frame.grid(row=0, column=0)
 
         name1_label.grid(row=3, column=0, sticky=constants.E)

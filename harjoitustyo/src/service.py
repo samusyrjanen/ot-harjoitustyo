@@ -7,7 +7,7 @@ class Service:
     Attributes:
         repo: Luokka, joka käsittelee dataa.
     '''
-    
+
     def __init__(self, repo):
         '''
         Konstruktori, joka luo muuttujat.
@@ -15,7 +15,7 @@ class Service:
         Args:
             repo: Luokka, joka käsittelee dataa.
         '''
-        
+
         self._repository = repo
         self._user = None
         self._user_id = None
@@ -27,7 +27,7 @@ class Service:
         Returns:
             Arvio tekstinä.
         '''
-        
+
         income = self._repository.read_income(self._user_id)
         expenses = self._repository.read_expenses(self._user_id)
         wealth = self._repository.read_wealth(self._user_id)
@@ -46,7 +46,7 @@ Kokonaisvarallisuutesi vuoden päästä: {12*sum(income+expenses) + wealth}'''
             name: Tulon nimi.
             amount: Tulon summa.
         '''
-        
+
         self._repository.add_income(amount, name, self._user_id)
 
     def add_expense(self, name, amount):
@@ -57,14 +57,14 @@ Kokonaisvarallisuutesi vuoden päästä: {12*sum(income+expenses) + wealth}'''
             name: Menon nimi.
             amount: Menon summa.
         '''
-        
+
         self._repository.add_expense(-amount, name, self._user_id)
 
     def delete_all_data(self):
         '''
         Poistaa kaiken datan käyttäjästä.
         '''
-        
+
         self._repository.clear(self._user_id)
 
     def print_data(self):
@@ -74,7 +74,7 @@ Kokonaisvarallisuutesi vuoden päästä: {12*sum(income+expenses) + wealth}'''
         Returns:
             Data tekstinä.
         '''
-        
+
         expenses = self._repository.get_data_expenses(self._user_id)
         income_list = self._repository.get_data_income(self._user_id)
         wealth = self._repository.read_wealth(self._user_id)
@@ -100,7 +100,7 @@ Kokonaisvarallisuutesi vuoden päästä: {12*sum(income+expenses) + wealth}'''
         Args:
             name: Poistettavan tulon nimi.
         '''
-        
+
         self._repository.delete_income(name, self._user_id)
 
     def delete_expense(self, name):
@@ -110,7 +110,7 @@ Kokonaisvarallisuutesi vuoden päästä: {12*sum(income+expenses) + wealth}'''
         Args:
             name: Poistettavan menon nimi.
         '''
-        
+
         self._repository.delete_expense(name, self._user_id)
 
     def update_wealth(self, wealth):
@@ -120,7 +120,7 @@ Kokonaisvarallisuutesi vuoden päästä: {12*sum(income+expenses) + wealth}'''
         Args:
             wealth: Varallisuuden määrä.
         '''
-        
+
         self._repository.add_wealth(wealth, self._user_id)
 
     def register(self, username, password):
@@ -134,7 +134,7 @@ Kokonaisvarallisuutesi vuoden päästä: {12*sum(income+expenses) + wealth}'''
         Returns:
             True jos rekisteröityminen ja kirjautuminen onnistuu, muussa tapauksessa False.
         '''
-        
+
         hash_value = hashlib.sha256(password.encode('utf-8')).hexdigest()
 
         if self._repository.register(username, hash_value):
@@ -154,7 +154,7 @@ Kokonaisvarallisuutesi vuoden päästä: {12*sum(income+expenses) + wealth}'''
         Returns:
             True jos kirjautuminen onnistuu, muussa tapauksessa False.
         '''
-        
+
         hash_value = hashlib.sha256(password.encode('utf-8')).hexdigest()
 
         if self._repository.login(username, hash_value):
@@ -167,7 +167,7 @@ Kokonaisvarallisuutesi vuoden päästä: {12*sum(income+expenses) + wealth}'''
         '''
         Kirjautuu ulos.
         '''
-        
+
         self._user = None
         self._user_id = None
 
@@ -176,5 +176,5 @@ Kokonaisvarallisuutesi vuoden päästä: {12*sum(income+expenses) + wealth}'''
         Returns:
             Käyttäjätunnus, jos kirjautuneena, muussa tapauksessa None.
         '''
-        
+
         return self._user
