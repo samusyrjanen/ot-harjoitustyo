@@ -2,9 +2,9 @@
 
 ## lista työtunneista
 
-[0.5, 5.3, 0.5, 3, 0.5, 1.5, 0.5, 1, 1.5, 7.5, 1, 2, 0.6, 2.8, 1.5, 2, 0.8]  
+[0.5, 5.3, 0.5, 3, 0.5, 1.5, 0.5, 1, 1.5, 7.5, 1, 2, 0.6, 2.8, 1.5, 2, 1]  
 
-yhteensä 32.5 h  
+yhteensä 32.7 h  
 
 ### viikko 2
 
@@ -52,5 +52,5 @@ tiedostorakenteen muutosten testailu ja testit:
 1.5 h  
 docstring -dokumentointi:
 2 h  
-arkkitehtuurikuvaus:  
-0.8 h
+arkkitehtuurikuvaus ja käyttöohje:  
+1 h  
