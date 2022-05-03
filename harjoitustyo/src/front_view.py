@@ -1,7 +1,23 @@
 from tkinter import ttk, constants
 
 class DataView:
+    '''
+    Luo dataosion sovelluksen perusnäkymään.
+
+    Attributes:
+        root: Sovelluksen ikkuna.
+        service: Sovelluslogiikasta huolehtiva luokka.
+    '''
+    
     def __init__(self, root, service):
+        '''
+        Konstruktori, joka luo muuttujat ja käynnistää näkymän luonnin.
+
+        Args:
+            root: Sovelluksen ikkuna.
+            service: Sovelluslogiikasta huolehtiva luokka.
+        '''
+        
         self._root = root
         self._frame = None
         self._service = service
@@ -9,9 +25,17 @@ class DataView:
         self._initialize()
 
     def pack(self):
+        '''
+        Viimeistelee näkymän luonnin.
+        '''
+        
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
+        '''
+        Poistaa tämänhetkisen näkymän.
+        '''
+        
         self._frame.destroy()
 
     def _initialize(self):
@@ -29,7 +53,25 @@ class DataView:
         data_label.grid(row=2, column=0, sticky=constants.W)
 
 class FrontView:
+    '''
+    Luo sovelluksen perusnäkymän.
+
+    Attributes:
+        root: Sovelluksen ikkuna.
+        service: Sovelluslogiikasta huolehtiva luokka.
+        show_login_view: Metodi, joka näyttää kirjautumisnäymän.
+    '''
+    
     def __init__(self, root, service, show_login_view):
+        '''
+        Konstruktori, joka luo muuttujat ja käynnistää näkymän luonnin.
+
+        Args:
+            root: Sovelluksen ikkuna.
+            service: Sovelluslogiikasta huolehtiva luokka.
+            show_login_view: Metodi, joka näyttää kirjautumisnäymän.
+        '''
+        
         self._root = root
         self._frame = None
         self._data_frame = None
@@ -40,9 +82,17 @@ class FrontView:
         self._initialize()
 
     def pack(self):
+        '''
+        viimeistelee näkymän luonnin.
+        '''
+        
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
+        '''
+        Poistaa tämänhetkisen näkymän.
+        '''
+        
         self._frame.destroy()
 
     def _initialize_data(self):

@@ -1,7 +1,25 @@
 from tkinter import ttk, constants
 
 class LoginView:
+    '''
+    Luo kirjautumisnäkymän.
+
+    Attributes:
+        root: Sovelluksen ikkuna.
+        service: Sovelluslogiikasta huolehtiva luokka.
+        show_front_view: Metodi, joka näyttää seuraavan näymän.
+    '''
+    
     def __init__(self, root, service, show_front_view):
+        '''
+        Konstruktori, joka luo muuttujat ja käynnistää näkymän luonnin.
+
+        Args:
+            root: Sovelluksen ikkuna.
+            service: Sovelluslogiikasta huolehtiva luokka.
+            show_front_view: Metodi, joka näyttää seuraavan näymän.
+        '''
+        
         self._root = root
         self._frame = None
         self._service = service
@@ -10,9 +28,17 @@ class LoginView:
         self._initialize()
 
     def pack(self):
+        '''
+        Viimeistelee näkymän luonnin.
+        '''
+        
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
+        '''
+        Poistaa tämänhetkisen näkymän.
+        '''
+        
         self._frame.destroy()
 
     def _initialize(self):

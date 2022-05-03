@@ -2,9 +2,9 @@
 
 ## lista työtunneista
 
-[0.5, 5.3, 0.5, 3, 0.5, 1.5, 0.5, 1, 1,5, 7.5, 1, 2, 0.6, 2.8, 1.5]  
+[0.5, 5.3, 0.5, 3, 0.5, 1.5, 0.5, 1, 1,5, 7.5, 1, 2, 0.6, 2.8, 1.5, 2]  
 
-yhteensä 29.7 h  
+yhteensä 31.7 h  
 
 ### viikko 2
 
@@ -48,5 +48,7 @@ sekvenssikaavio:
 
 kirjautuminen:  
 2.8 h  
-tiedostorakenteen testailu ja testit:  
+tiedostorakenteen muutosten testailu ja testit:  
 1.5 h  
+docstring -dokumentointi:
+2 h

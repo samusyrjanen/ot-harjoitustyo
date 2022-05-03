@@ -6,6 +6,10 @@ from database_connection import get_database_connection
 
 
 def main():
+    '''
+    Käynnistää sovelluksen luomalla ikkunan ja kutsumalla UI:ta.
+    '''
+    
     repository = Repository(get_database_connection())
     service = Service(repository)
 

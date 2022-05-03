@@ -1,6 +1,13 @@
 from database_connection import get_database_connection
 
 def drop_tables(connection):
+    '''
+    Poistaa kaikki taulut tietokannasta.
+
+    Args:
+        connection: Yhteys tietokantaan.
+    '''
+    
     cursor = connection.cursor()
 
     cursor.execute('''
@@ -19,6 +26,13 @@ def drop_tables(connection):
     connection.commit()
 
 def create_tables(connection):
+    '''
+    Luo uudet taulut tietokantaan.
+
+    Args:
+        connection: Yhteys tietokantaan.
+    '''
+    
     cursor = connection.cursor()
 
     cursor.execute('''
@@ -55,6 +69,10 @@ def create_tables(connection):
     connection.commit()
 
 def initialize_database():
+    '''
+    Alustaa tietokannan luomalla uudet tyhjät taulut.
+    '''
+    
     connection = get_database_connection()
 
     drop_tables(connection)

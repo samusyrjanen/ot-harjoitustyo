@@ -1,12 +1,33 @@
 import hashlib
 
 class Service:
+    '''
+    Huolehtii sovelluslogiikasta ja käyttöliittymän ja repositorion kommunikaatiosta.
+
+    Attributes:
+        repo: Luokka, joka käsittelee dataa.
+    '''
+    
     def __init__(self, repo):
+        '''
+        Konstruktori, joka luo muuttujat.
+
+        Args:
+            repo: Luokka, joka käsittelee dataa.
+        '''
+        
         self._repository = repo
         self._user = None
         self._user_id = None
 
     def get_estimation(self):
+        '''
+        Luo datan perusteella arvion varallisuuden kehityksestä.
+
+        Returns:
+            Arvio tekstinä.
+        '''
+        
         income = self._repository.read_income(self._user_id)
         expenses = self._repository.read_expenses(self._user_id)
         wealth = self._repository.read_wealth(self._user_id)
@@ -18,15 +39,42 @@ Kokonaisvarallisuutesi kuukauden päästä: {sum(income+expenses) + wealth}
 Kokonaisvarallisuutesi vuoden päästä: {12*sum(income+expenses) + wealth}'''
 
     def add_income(self, name, amount):
+        '''
+        Lisää kuukausittaisen tulon.
+
+        Args:
+            name: Tulon nimi.
+            amount: Tulon summa.
+        '''
+        
         self._repository.add_income(amount, name, self._user_id)
 
     def add_expense(self, name, amount):
+        '''
+        Lisää kuukausittaisen menon.
+
+        Args:
+            name: Menon nimi.
+            amount: Menon summa.
+        '''
+        
         self._repository.add_expense(-amount, name, self._user_id)
 
     def delete_all_data(self):
+        '''
+        Poistaa kaiken datan käyttäjästä.
+        '''
+        
         self._repository.clear(self._user_id)
 
     def print_data(self):
+        '''
+        Näyttää annetun datan.
+
+        Returns:
+            Data tekstinä.
+        '''
+        
         expenses = self._repository.get_data_expenses(self._user_id)
         income_list = self._repository.get_data_income(self._user_id)
         wealth = self._repository.read_wealth(self._user_id)
@@ -46,15 +94,47 @@ Kokonaisvarallisuutesi vuoden päästä: {12*sum(income+expenses) + wealth}'''
         return print_income + print_expenses + print_wealth
 
     def delete_income(self, name):
+        '''
+        Poistaa tietyn tulon.
+
+        Args:
+            name: Poistettavan tulon nimi.
+        '''
+        
         self._repository.delete_income(name, self._user_id)
 
     def delete_expense(self, name):
+        '''
+        Poistaa tietyn menon.
+
+        Args:
+            name: Poistettavan menon nimi.
+        '''
+        
         self._repository.delete_expense(name, self._user_id)
 
     def update_wealth(self, wealth):
+        '''
+        Päivittää repositorioon tämänhetkisen varallisuuden.
+
+        Args:
+            wealth: Varallisuuden määrä.
+        '''
+        
         self._repository.add_wealth(wealth, self._user_id)
 
     def register(self, username, password):
+        '''
+        Rekisteröi uuden käyttäjän.
+
+        Args:
+            username: Käyttäjätunnus
+            password: Salasana
+
+        Returns:
+            True jos rekisteröityminen ja kirjautuminen onnistuu, muussa tapauksessa False.
+        '''
+        
         hash_value = hashlib.sha256(password.encode('utf-8')).hexdigest()
 
         if self._repository.register(username, hash_value):
@@ -64,6 +144,17 @@ Kokonaisvarallisuutesi vuoden päästä: {12*sum(income+expenses) + wealth}'''
         return False
 
     def login(self, username, password):
+        '''
+        Kirjautuu sisään olemassa olevalla käyttäjällä.
+
+        Args:
+            username: Käyttäjätunnus
+            password: Salasana
+
+        Returns:
+            True jos kirjautuminen onnistuu, muussa tapauksessa False.
+        '''
+        
         hash_value = hashlib.sha256(password.encode('utf-8')).hexdigest()
 
         if self._repository.login(username, hash_value):
@@ -73,8 +164,17 @@ Kokonaisvarallisuutesi vuoden päästä: {12*sum(income+expenses) + wealth}'''
         return False
 
     def logout(self):
+        '''
+        Kirjautuu ulos.
+        '''
+        
         self._user = None
         self._user_id = None
 
     def username(self):
+        '''
+        Returns:
+            Käyttäjätunnus, jos kirjautuneena, muussa tapauksessa None.
+        '''
+        
         return self._user
