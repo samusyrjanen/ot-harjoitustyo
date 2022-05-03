@@ -16,6 +16,7 @@ Sovellus on testattu python-versiolla 3.8
 [työaikakirjanpito](./harjoitustyo/dokumentaatio/tyoaikakirjanpito.md)  
 [changelog](./harjoitustyo/dokumentaatio/changelog.md)  
 [arkkitehtuuri](./harjoitustyo/dokumentaatio/arkkitehtuuri.md)  
+[käyttöohje](./harjoitustyo/dokumentaatio/kayttoohje.md)  
 
 ## Asennus
 
