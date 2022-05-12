@@ -265,3 +265,21 @@ class Repository:
         sql = 'delete from users where username=:username'
         cursor.execute(sql, {'username':username})
         self._connection.commit()
+
+    def check_username_availability(self, username):
+        '''
+        Tarkistaa onko käyttäjätunnus vapaa.
+
+        Args:
+            username: Tarkistettava käyttäjätunnus
+
+        Returns:
+            True jos käyttäjätunnus on vapaa, False jos varattu.
+        '''
+
+        cursor = self._connection.cursor()
+        sql = 'select username from users where username=:username'
+        result = cursor.execute(sql, {'username':username})
+        if result.fetchone():
+            return False
+        return True

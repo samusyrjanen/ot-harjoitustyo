@@ -24,3 +24,7 @@
 ## viikko 6
 
 - käyttäjät voivat kirjautua sisään ja data tallentuu käyttäjäkohtaisesti  
+
+## viikko 7  
+
+- Virheilmoitukset

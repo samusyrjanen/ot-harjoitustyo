@@ -178,3 +178,16 @@ Kokonaisvarallisuutesi vuoden päästä: {12*sum(income+expenses) + wealth}'''
         '''
 
         return self._user
+
+    def check_username_availability(self, username):
+        '''
+        Tarkistaa onko käyttäjänimi vapaa.
+
+        Args:
+            username: Tarkistettava käyttäjätunnus
+
+        Returns:
+            True jos vapaa, muussa tapauksessa false.
+        '''
+
+        return self._repository.check_username_availability(username)

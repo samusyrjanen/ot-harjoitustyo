@@ -1,4 +1,4 @@
-from tkinter import ttk, constants
+from tkinter import ttk, constants, StringVar
 
 class LoginView:
     '''
@@ -18,12 +18,14 @@ class LoginView:
             root: Sovelluksen ikkuna.
             service: Sovelluslogiikasta huolehtiva luokka.
             show_front_view: Metodi, joka näyttää seuraavan näymän.
+            error_vatiable: Virheviesti
         '''
 
         self._root = root
         self._frame = None
         self._service = service
         self._show_front_view = show_front_view
+        self._error_variable = None
 
         self._initialize()
 
@@ -44,9 +46,12 @@ class LoginView:
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
 
+        self._error_variable = StringVar(self._frame)
+
         heading_label = ttk.Label(master=self._frame, text="kirjaudu/rekisteröidy")
         username_label = ttk.Label(master=self._frame, text="käyttäjätunnus")
         password_label = ttk.Label(master=self._frame, text="salasana")
+        self._error_label = ttk.Label(master=self._frame, textvariable=self._error_variable)
 
         self._username_entry = ttk.Entry(master=self._frame)
         self._password_entry = ttk.Entry(master=self._frame, show='*')
@@ -72,17 +77,45 @@ class LoginView:
         login_button.grid(row=3, column=1)
         register_button.grid(row=4, column=1)
 
+        self._hide_error()
+
     def _handle_login(self):
         username = self._username_entry.get()
         password = self._password_entry.get()
 
+        if not username or not password:
+            self._show_error('Täytä molemmat kentät')
+            return
+
+        if self._service.check_username_availability(username):
+            self._show_error('Käyttäjätunnusta ei ole rekisteröity')
+            return
+
         if self._service.login(username, password):
             self._show_front_view()
+        else:
+            self._show_error('Väärä salasana')
 
     def _handle_register(self):
         username = self._username_entry.get()
         password = self._password_entry.get()
 
+        if not username or not password:
+            self._show_error('Täytä molemmat kentät')
+            return
+
+        if not self._service.check_username_availability(username):
+            self._show_error('Käyttäjätunnus on jo rekisteröity')
+            return
+
         if self._service.register(username, password):
             self._show_front_view()
+        else:
+            self._show_error('Virhe')
             
+    def _show_error(self, message):
+        self._error_variable.set(message)
+        self._error_label.grid(row=5, column=1)
+
+    def _hide_error(self):
+        self._error_label.grid_remove()
