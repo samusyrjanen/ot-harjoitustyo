@@ -8,6 +8,7 @@ class LoginView:
         root: Sovelluksen ikkuna.
         service: Sovelluslogiikasta huolehtiva luokka.
         show_front_view: Metodi, joka näyttää seuraavan näymän.
+        error_variable: Virheviesti
     '''
 
     def __init__(self, root, service, show_front_view):
@@ -18,7 +19,7 @@ class LoginView:
             root: Sovelluksen ikkuna.
             service: Sovelluslogiikasta huolehtiva luokka.
             show_front_view: Metodi, joka näyttää seuraavan näymän.
-            error_vatiable: Virheviesti
+            error_variable: Virheviesti
         '''
 
         self._root = root

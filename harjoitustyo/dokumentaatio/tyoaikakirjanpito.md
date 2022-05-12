@@ -2,9 +2,9 @@
 
 ## lista työtunneista
 
-[0.5, 5.3, 0.5, 3, 0.5, 1.5, 0.5, 1, 1.5, 7.5, 1, 2, 0.6, 2.8, 1.5, 2, 1, 0.5, 1.7]  
+[0.5, 5.3, 0.5, 3, 0.5, 1.5, 0.5, 1, 1.5, 7.5, 1, 2, 0.6, 2.8, 1.5, 2, 1, 0.5, 1.7, 2.8]  
 
-yhteensä 34.9 h  
+yhteensä 37.7 h  
 
 ### viikko 2
 
@@ -61,3 +61,5 @@ pylint:
 
 virheilmoitukset kirjautumisnäkymään:  
 1.7 h  
+virheilmoitukset päänäkymään:  
+2.8 h  

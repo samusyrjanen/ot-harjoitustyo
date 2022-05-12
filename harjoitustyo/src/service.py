@@ -191,3 +191,29 @@ Kokonaisvarallisuutesi vuoden päästä: {12*sum(income+expenses) + wealth}'''
         '''
 
         return self._repository.check_username_availability(username)
+
+    def search_income(self, name):
+        '''
+        Etsii tulon nimen perusteella.
+
+        Args:
+            name: tulon nimi
+
+        Returns:
+            True jos kyseinen tulo löytyy, muutoin False.
+        '''
+
+        return self._repository.search_income(name, self._user_id)
+
+    def search_expense(self, name):
+        '''
+        Etsii menon nimen perusteella.
+
+        Args:
+            name: menon nimi
+
+        Returns:
+            True jos kyseinen meno löytyy, muutoin False.
+        '''
+
+        return self._repository.search_expense(name, self._user_id)

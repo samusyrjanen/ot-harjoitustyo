@@ -283,3 +283,39 @@ class Repository:
         if result.fetchone():
             return False
         return True
+
+    def search_income(self, name, user_id):
+        '''
+        Etsii tulon nimen perusteella.
+
+        Args:
+            name: tulon nimi
+
+        Returns:
+            True jos kyseinen tulo löytyy, muutoin False.
+        '''
+
+        cursor = self._connection.cursor()
+        sql = 'select name from income where name=:name and user_id=:user_id'
+        result = cursor.execute(sql, {'name':name, 'user_id':user_id})
+        if result.fetchone():
+            return True
+        return False
+
+    def search_expense(self, name, user_id):
+        '''
+        Etsii menon nimen perusteella.
+
+        Args:
+            name: menon nimi
+
+        Returns:
+            True jos kyseinen meno löytyy, muutoin False.
+        '''
+
+        cursor = self._connection.cursor()
+        sql = 'select name from expenses where name=:name and user_id=:user_id'
+        result = cursor.execute(sql, {'name':name, 'user_id':user_id})
+        if result.fetchone():
+            return True
+        return False
