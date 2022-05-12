@@ -1,10 +1,14 @@
 ## kirjautuminen
 
-Sovelluksen käynnistyessä ensimmäinen näkymä on kirjautumisnäkymä. Ylempään tekstikenttään kirjoitetaan käyttäjätunnus ja alempaan salasana. Jos käyttäjää ei ole vielä olemassa, panetaan rekisteröidy, muutoin painetaan kirjaudu.
+Sovelluksen käynnistyessä ensimmäinen näkymä on kirjautumisnäkymä. Ylempään tekstikenttään kirjoitetaan käyttäjätunnus ja alempaan salasana. Jos käyttäjää ei ole vielä olemassa, panetaan rekisteröidy, muutoin painetaan kirjaudu. Rekisteröityminen tapahtuu samasta näkymästä.  
+
+![](./kuvat/login_view.png)
 
 ## sovelluksen käyttäminen
 
-Kirjautumisen jälkeen näkyviin tulee sovelluksen päänäkymä. Ylälaidassa näkyy käyttäjän antamien tietojen perusteella luotu arvio.
+Kirjautumisen jälkeen näkyviin tulee sovelluksen päänäkymä. Ylälaidassa näkyy käyttäjän antamien tietojen perusteella luotu arvio.  
+
+![](./kuvat/front_view.png)
 
 ### tietojen hallinta
 
