@@ -63,7 +63,7 @@ class DataView:
 
     def _show_error(self, message):
         self._error_variable.set(message)
-        self._error_label.grid(row=3, column=2)
+        self._error_label.grid(row=4, column=2)
 
     def _hide_error(self):
         self._error_label.grid_remove()

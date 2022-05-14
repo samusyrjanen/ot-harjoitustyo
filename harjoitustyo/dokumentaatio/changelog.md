@@ -28,3 +28,4 @@
 ## viikko 7  
 
 - Virheilmoitukset
+- Sisäänkirjautunut käyttäjätunnus päänäkymään
