@@ -36,7 +36,8 @@ class Service:
 Tuloarviosi vuodessa: {12*sum(income+expenses)}
 
 Kokonaisvarallisuutesi kuukauden päästä: {sum(income+expenses) + wealth}
-Kokonaisvarallisuutesi vuoden päästä: {12*sum(income+expenses) + wealth}'''
+Kokonaisvarallisuutesi vuoden päästä: {12*sum(income+expenses) + wealth}
+            '''
 
     def add_income(self, name, amount):
         '''

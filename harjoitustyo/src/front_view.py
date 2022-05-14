@@ -44,17 +44,20 @@ class DataView:
 
         estimation = self._service.get_estimation()
         data = self._service.print_data()
+        user = self._service.username()
 
         self._error_variable = StringVar(self._frame)
 
+        user_label = ttk.Label(master=self._frame, text=f"Käyttäjä: {user}", foreground="green")
         heading_label = ttk.Label(master=self._frame, text="Varallisuusarvio")
         estimation_label = ttk.Label(master=self._frame, text=estimation)
         data_label = ttk.Label(master=self._frame, text=data)
         self._error_label = ttk.Label(master=self._frame, textvariable=self._error_variable, foreground="red")
 
-        heading_label.grid(row=0, column=0, sticky=constants.W)
-        estimation_label.grid(row=1, column=0, sticky=constants.W)
-        data_label.grid(row=2, column=0, sticky=constants.W)
+        user_label.grid(row=0, column=0, sticky=constants.W)
+        heading_label.grid(row=1, column=0, sticky=constants.W)
+        estimation_label.grid(row=2, column=0, sticky=constants.W)
+        data_label.grid(row=3, column=0, sticky=constants.W)
 
         self._hide_error()
 
