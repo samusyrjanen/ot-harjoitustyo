@@ -7,14 +7,14 @@ esimerkiksi säästämisen ja sijoittamisen suunnitteluun.
 
 # käyttäjät
 
-Sovellukseen ei tarvitse eri oikeuksilla toimivia käyttäjiä.
+Kaikilla käyttäjillä on samat oikeudet.
 
 # toiminnallisuudet
 
 - (tehty) käyttäjä voi tehdä tunnuksen ja kirjautua sisään
   - (tehty) käyttäjätunnus täytyy olla uniikki
   - (tehty) kirjautuminen tapahtuu kirjautumislomakkeella
-  - jos kirjautuminen epäonnistuu, siitä ilmoitetaan käyttäjälle
+  - (tehty) jos kirjautuminen epäonnistuu, siitä ilmoitetaan käyttäjälle
 - (tehty) käyttäjä näkee oman suunnitelmansa ja kuukausittaisen ja vuosittaisen suunnitellun varallisuutensa
 - (tehty) käyttäjä voi merkitä tämänhetkisen varallisuutensa
 - (tehty) käyttäjä voi lisätä ja poistaa menoja tai tuloja, jolloin varallisuusennuste muuttuu

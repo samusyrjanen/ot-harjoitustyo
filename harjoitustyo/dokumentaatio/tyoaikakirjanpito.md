@@ -2,9 +2,9 @@
 
 ## lista työtunneista
 
-[0.5, 5.3, 0.5, 3, 0.5, 1.5, 0.5, 1, 1.5, 7.5, 1, 2, 0.6, 2.8, 1.5, 2, 1, 0.5, 1.7, 2.8, 0.5, 1.2]  
+[0.5, 5.3, 0.5, 3, 0.5, 1.5, 0.5, 1, 1.5, 7.5, 1, 2, 0.6, 2.8, 1.5, 2, 1, 0.5, 1.7, 2.8, 0.5, 1.2, 1]  
 
-yhteensä 39.4 h  
+yhteensä 40.4 h  
 
 ### viikko 2
 
@@ -67,3 +67,5 @@ kirjautunut käyttäjätunnus päänäkymään:
 0.5 h  
 käyttöohje ja arkkitehtuurikuvaus:  
 1.2 h  
+testit ja pylint:  
+1 h  

@@ -113,7 +113,7 @@ class LoginView:
             self._show_front_view()
         else:
             self._show_error('Virhe')
-            
+
     def _show_error(self, message):
         self._error_variable.set(message)
         self._error_label.grid(row=5, column=1)

@@ -52,7 +52,11 @@ class DataView:
         heading_label = ttk.Label(master=self._frame, text="Varallisuusarvio")
         estimation_label = ttk.Label(master=self._frame, text=estimation)
         data_label = ttk.Label(master=self._frame, text=data)
-        self._error_label = ttk.Label(master=self._frame, textvariable=self._error_variable, foreground="red")
+        self._error_label = ttk.Label(
+            master=self._frame,
+            textvariable=self._error_variable,
+            foreground="red"
+        )
 
         user_label.grid(row=0, column=0, sticky=constants.W)
         heading_label.grid(row=1, column=0, sticky=constants.W)
@@ -61,7 +65,7 @@ class DataView:
 
         self._hide_error()
 
-    def _show_error(self, message):
+    def show_error(self, message):
         self._error_variable.set(message)
         self._error_label.grid(row=4, column=2)
 
@@ -213,13 +217,13 @@ class FrontView:
         add_income_amount = self._add_income_amount_entry.get()
 
         if not add_income_amount or not add_income_name:
-            self._data_view._show_error('Täytä molemmat kentät')
+            self._data_view.show_error('Täytä molemmat kentät')
             return
 
         try:
             add_income_amount = int(add_income_amount)
         except ValueError:
-            self._data_view._show_error('Anna summa kokonaislukuna')
+            self._data_view.show_error('Anna summa kokonaislukuna')
             return
 
         self._service.add_income(add_income_name, add_income_amount)
@@ -231,13 +235,13 @@ class FrontView:
         add_expense_amount = self._add_expense_amount_entry.get()
 
         if not add_expense_amount or not add_expense_name:
-            self._data_view._show_error('Täytä molemmat kentät')
+            self._data_view.show_error('Täytä molemmat kentät')
             return
 
         try:
             add_expense_amount = int(add_expense_amount)
         except ValueError:
-            self._data_view._show_error('Anna summa kokonaislukuna')
+            self._data_view.show_error('Anna summa kokonaislukuna')
             return
 
         self._service.add_expense(add_expense_name, add_expense_amount)
@@ -248,7 +252,7 @@ class FrontView:
         delete_income_name = self._delete_income_name_entry.get()
 
         if not self._service.search_income(delete_income_name):
-            self._data_view._show_error('Tuloa ei löytynyt')
+            self._data_view.show_error('Tuloa ei löytynyt')
             return
 
         self._service.delete_income(delete_income_name)
@@ -259,7 +263,7 @@ class FrontView:
         delete_expense_name = self._delete_expense_name_entry.get()
 
         if not self._service.search_expense(delete_expense_name):
-            self._data_view._show_error('Menoa ei löytynyt')
+            self._data_view.show_error('Menoa ei löytynyt')
             return
 
         self._service.delete_expense(delete_expense_name)
@@ -272,7 +276,7 @@ class FrontView:
         try:
             wealth = int(wealth)
         except ValueError:
-            self._data_view._show_error('Anna summa kokonaislukuna')
+            self._data_view.show_error('Anna summa kokonaislukuna')
             return
 
         self._service.update_wealth(wealth)

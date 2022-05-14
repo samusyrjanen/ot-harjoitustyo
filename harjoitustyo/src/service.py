@@ -218,3 +218,4 @@ Kokonaisvarallisuutesi vuoden päästä: {12*sum(income+expenses) + wealth}
         '''
 
         return self._repository.search_expense(name, self._user_id)
+        

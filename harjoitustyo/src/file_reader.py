@@ -319,3 +319,4 @@ class Repository:
         if result.fetchone():
             return True
         return False
+        

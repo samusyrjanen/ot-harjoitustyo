@@ -19,7 +19,8 @@ class TestService(unittest.TestCase):
 Tuloarviosi vuodessa: 12
 
 Kokonaisvarallisuutesi kuukauden päästä: 11
-Kokonaisvarallisuutesi vuoden päästä: 22''')
+Kokonaisvarallisuutesi vuoden päästä: 22
+            ''')
 
     def test_register(self):
         self.assertEqual(self.service.register('TestUser', 'password'), True)

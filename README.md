@@ -20,8 +20,9 @@ Sovellus on testattu python-versiolla 3.8
 
 ## Asennus
 
-Asenna riippuvuudet:  
 Siirry ensin hakemistoon harjoitustyo/  
+
+Asenna riippuvuudet:  
 `poetry install`  
 
 Tietokannan alustus:  
@@ -31,6 +32,8 @@ Sovelluksen käynnistys:
 `poetry run invoke start`
 
 ## komentorivitoiminnot
+
+Siirry ensin hakemistoon harjoitustyo/  
 
 Ohjelman suorittaminen:  
 `poetry run invoke start`
